@@ -35,7 +35,22 @@ Response:
 }
 ```
 
+---------------
+Example:
+
+*Request*
+```
+/shorten?url=https://www.facebook.com
+```
+*Response*
+```
+{
+longURL: "https://www.facebook.com",
+shortURL: "BpLnfg"
+}
+```
 
 
 
-*This project is under development. Any suggestions and PRs are highly welcomed!*
+
+*This project is under development. Any suggestions or PRs are highly welcomed!*
