@@ -1,8 +1,7 @@
 package model
 
-//URL defines
+//URL model
 type URL struct {
-	ID       string `json:"id,omitempty"`
-	LongURL  string `json:"longURL,omitempty"`
-	ShortURL string `json:"shortURL,omitempty"`
+	LongURL  string `json:"longURL"`
+	ShortURL string `json:"shortURL"`
 }

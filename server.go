@@ -40,7 +40,7 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/", handler.IndexPage()).Methods("GET")
 	router.HandleFunc("/shorten", handler.ShortenURL(client)).Methods("GET")
-	// router.HandleFunc("/{id}", handler.RedirectHandler()).Methods("GET")
+	router.HandleFunc("/{id}", handler.Redirect(client)).Methods("GET")
 
 	log.Println("[[server.go]] Listening at PORT:", port)
 	log.Fatal(http.ListenAndServe("0.0.0.0:"+port, router))
@@ -48,9 +48,10 @@ func main() {
 
 //newRedisClient creates a new client and returns *redis.Client,error
 func newRedisClient() (*redis.Client, error) {
+	password := os.Getenv("REDIS_PASS")
 	client := redis.NewClient(&redis.Options{
 		Addr:     "localhost:" + redisPort,
-		Password: "helloworld",
+		Password: password,
 		DB:       0, //use default DB
 	})
 	_, err := client.Ping().Result()

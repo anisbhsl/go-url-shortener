@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"encoding/json"
 	"go-url-shortener/model"
 	"log"
 	"net/http"
@@ -15,8 +14,11 @@ func IndexPage() http.HandlerFunc {
 		response.Message = "URL Shortener API"
 
 		//send response
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(response)
+		// w.Header().Set("Content-Type", "application/json")
+		// w.WriteHeader(http.StatusOK)
+		// json.NewEncoder(w).Encode(response)
+
+		SendResponseToClient(w, r, response, 200)
+		return
 	}
 }
