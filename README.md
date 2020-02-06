@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/anisbhsl/go-url-shortener)](https://goreportcard.com/report/github.com/anisbhsl/go-url-shortener)
+
 **go-url-shortener**
 
 A simple URL shortener API written in Go. This URL shortening service uses Redis KV store to store URLs and their shortened hash. 
