@@ -35,7 +35,8 @@ func Redirect(client *redis.Client) http.HandlerFunc {
 		response.ShortURL = id
 		response.LongURL = longURL
 		//send response
-		SendResponseToClient(w, r, response, 200)
+		// SendResponseToClient(w, r, response, 200)
+		http.Redirect(w, r, longURL, http.StatusTemporaryRedirect)
 		return
 
 	}

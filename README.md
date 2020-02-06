@@ -20,25 +20,17 @@ Response:
 }
 ```
 
-2. Retrieve original URL [Access resource using shortURL]
+2. Use short URL to redirect to original URL
 ```
 /{shortURL}
 ```
 
-- *Returns*
-StatusCode: ```200```
-Response:
-```
-{
-    longURL:
-    shortURL:
-}
-```
+*Redirects to original URL*
 
 ---------------
 Example:
 
-*Request*
+*1. URL Shorten Request*
 ```
 /shorten?url=https://www.facebook.com
 ```
@@ -50,6 +42,11 @@ shortURL: "BpLnfg"
 }
 ```
 
+*2. Using short url 
+```
+/BpLnfg
+```
+*Redirects to* ```https://www.facebook.com```
 
 
 
